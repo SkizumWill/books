@@ -1,5 +1,4 @@
 import 'package:books/router.dart';
-import 'package:books/utils/widget/input_decoration_widget.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
       routerConfig: router,
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
-        inputDecorationTheme: inputDecorationTheme,
+        // inputDecorationTheme: inputDecorationTheme,
         useMaterial3: true,
       ),
     );
