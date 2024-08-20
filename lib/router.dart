@@ -1,7 +1,7 @@
 import 'package:books/error_page.dart';
 import 'package:books/feature/auth/presentation/pages/spah_screen.dart';
 import 'package:go_router/go_router.dart';
-import 'feature/auth/presentation/pages/intermedaire_screen.dart';
+import 'feature/auth/presentation/pages/login_screen.dart';
 import 'feature/management_books/presentation/pages/details_books_page.dart';
 import 'feature/management_books/presentation/pages/home_user_page.dart';
 import 'feature/management_books/presentation/pages/login_page.dart';
@@ -30,7 +30,7 @@ final router = GoRouter(
       routes: [
         GoRoute(
           path: 'intermedaire',
-          builder: (context, state) => const IntermedaireScreen(),
+          builder: (context, state) => const LoginScreen(),
         )
       ],
     ),
