@@ -8,4 +8,5 @@ class TColors {
   static Color whiteBackground = Colors.white;
   static Color error = Colors.red;
   static Color succes = Colors.green;
+  static Color textColor = Colors.grey.shade600;
 }

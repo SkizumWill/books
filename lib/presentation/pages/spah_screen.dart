@@ -16,7 +16,7 @@ class _SpahScreenState extends State<SpahScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 8), () => context.go('/intermedaire'));
+    Timer(const Duration(seconds: 8), () => context.go('/home'));
   }
 
   @override

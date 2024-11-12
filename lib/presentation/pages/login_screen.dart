@@ -1,9 +1,10 @@
-import 'package:books/utils/constant/colors.dart';
+import 'package:books/core/utils/constant/colors.dart';
 import 'package:flutter/material.dart';
 
-import '../widget/bottom_login_page.dart';
-import '../widget/custom_clipper_widget.dart';
+import '../widget/auth/bottom_login_page.dart';
+import '../widget/curve_header.dart';
 import '../widget/elevated_button_style.dart';
+import '../widget/title_style.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -14,6 +15,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   bool? _ischecked = false;
+  bool _isObscured=true;
 
   @override
   Widget build(BuildContext context) {
@@ -21,20 +23,8 @@ class _LoginScreenState extends State<LoginScreen> {
     return SafeArea(
       child: Scaffold(
         body: Column(children: [
-          ClipPath(
-              clipper: CustomClipperWidget(),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: TColors.textSecondColors,
-                  image: const DecorationImage(
-                    image: AssetImage("asset/image/background.jpg"),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                height: size.height * 0.25,
-                width: double.infinity,
-              )),
-          Expanded(
+          CurveHeader(size: size),
+          Flexible(
             child: Container(
               alignment: Alignment.topLeft,
               padding: const EdgeInsets.symmetric(
@@ -48,26 +38,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                       Text(
                         "Welcome",
-                        style: TextStyle(
-                            color: TColors.primaryColors,
-                            fontSize: 30,
-                            fontWeight: FontWeight.w700,
-                            fontFamily: "Poppins"),
+                        style: textStyle,
                       ),
                       Text(
                         "Back!",
-                        style: TextStyle(
-                          color: TColors.buttonColors,
-                          fontSize: 25,
-                          fontWeight: FontWeight.w600,
-                        ),
+                        style: subTitle(),
                       ),
                       Text(
                         "sign in to acces for your book and discuss with people who have the same ideas ",
-                        style: TextStyle(
-                            color: Colors.grey.shade600,
-                            fontSize: 13,
-                            fontWeight: FontWeight.w300),
+                        style: descriptionStyle(),
                       ),
                       const SizedBox(
                         height: 15,
@@ -88,11 +67,27 @@ class _LoginScreenState extends State<LoginScreen> {
                         decoration: InputDecoration(
                           labelText: "Password",
                           prefixIcon: const Icon(Icons.lock, size: 25),
-                          suffixIcon: Icon(
-                            Icons.remove_red_eye_sharp,
-                            color: TColors.buttonColors,
-                            size: 25,
-                          ),
+                          
+                            suffixIcon: IconButton(
+                              onPressed: () => setState(() {
+                                if (_isObscured == false) {
+                                  _isObscured = true;
+                                } else {
+                                  _isObscured = false;
+                                }
+                              }),
+                              icon: _isObscured
+                                  ? Icon(
+                                      Icons.remove_red_eye,
+                                      size: 25,
+                                      color: TColors.buttonColors,
+                                    )
+                                  : Icon(
+                                      Icons.lock_open_rounded,
+                                      size: 25,
+                                      color: TColors.buttonColors,
+                                    ),
+                            ),
                         ),
                       ),
                       const SizedBox(
@@ -162,4 +157,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+
+
+  
 }

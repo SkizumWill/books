@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 
-import "../../../../utils/constant/colors.dart";
+import "../../core/utils/constant/colors.dart";
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

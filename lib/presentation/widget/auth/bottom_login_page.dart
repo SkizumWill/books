@@ -1,7 +1,9 @@
-import 'package:books/feature/auth/presentation/widget/apple_button.dart';
-import 'package:books/feature/auth/presentation/widget/google_button.dart';
-import 'package:books/utils/constant/colors.dart';
+import 'package:books/presentation/widget/auth/apple_button.dart';
+import 'package:books/presentation/widget/google_button.dart';
+import 'package:books/presentation/widget/separation_bar.dart';
+import 'package:books/core/utils/constant/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class BottomLoginPage extends StatelessWidget {
   const BottomLoginPage({super.key});
@@ -10,24 +12,10 @@ class BottomLoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              Expanded(
-                child: Divider(),
-              ),
-              SizedBox(
-                width: 5,
-              ),
-              Text("OR"),
-              SizedBox(
-                width: 5,
-              ),
-              Expanded(
-                child: Divider(),
-              ),
-            ]),
+        const SeparationBar(),
+        const SizedBox(
+          height: 10,
+        ),
         const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -48,8 +36,7 @@ class BottomLoginPage extends StatelessWidget {
               ),
             ),
             TextButton(
-              
-              onPressed: () {},
+              onPressed: () => context.go('/register'),
               child: Text(
                 "Register",
                 style: TextStyle(

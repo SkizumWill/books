@@ -1,4 +1,4 @@
-import 'package:books/utils/constant/colors.dart';
+import 'package:books/core/utils/constant/colors.dart';
 import 'package:flutter/material.dart';
 
 InputDecorationTheme inputDecorationTheme = InputDecorationTheme(
@@ -10,12 +10,12 @@ InputDecorationTheme inputDecorationTheme = InputDecorationTheme(
   disabledBorder: OutlineInputBorder(
     gapPadding: 3,
     borderRadius: BorderRadius.circular(50),
-    borderSide: const BorderSide(color: Colors.grey),
+    borderSide: BorderSide(color: TColors.primaryColors),
   ),
   enabledBorder: OutlineInputBorder(
     gapPadding: 3,
     borderRadius: BorderRadius.circular(50),
-    borderSide: const BorderSide(color: Colors.grey),
+    borderSide: BorderSide(color: TColors.primaryColors),
   ),
   errorBorder: OutlineInputBorder(
     gapPadding: 3,
@@ -25,7 +25,7 @@ InputDecorationTheme inputDecorationTheme = InputDecorationTheme(
   errorMaxLines: 3,
   focusedBorder: OutlineInputBorder(
     gapPadding: 3,
-    borderSide: const BorderSide(color: Colors.grey),
+    borderSide: BorderSide(color: TColors.primaryColors),
     borderRadius: BorderRadius.circular(20),
   ),
 );
